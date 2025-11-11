@@ -190,9 +190,9 @@ export default function HomePage() {
       {/* Contact Section */}
       <section
         id="contact"
-        className="min-h-screen flex flex-row items-center bg-pink-50 px-8 py-20 text-center justify-evenly"
+        className="min-h-screen flex flex-col md:flex-row items-center bg-pink-50 px-8 py-20 text-center justify-evenly"
       >
-        <div className="w-1/3">
+        <div className="w-full md:w-1/3">
           <h2 className="text-4xl font-bold text-primary mb-6">
             Book Your Session
           </h2>
@@ -200,14 +200,14 @@ export default function HomePage() {
             Ready to experience relaxation and renewal? Reach out to schedule
             your appointment or learn more about our offerings.
           </p>
-          <form className="max-w-md w-full text-left gap-4 flex flex-col">
+          <form className="max-w-md w-full text-left gap-4 flex flex-col pb-4">
             <Input type="text" placeholder="Your Name" />
             <Input type="email" placeholder="Your Email" />
             <Textarea placeholder="Your Message"></Textarea>
             <Button type="submit">Send Message</Button>
           </form>
         </div>
-        <div className="w-1/2 h-96 rounded-lg overflow-hidden border border-border shadow-md">
+        <div className=" w-full md:w-1/2 h-96 rounded-lg overflow-hidden border border-border shadow-md">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d177127.95045618672!2d18.10850803677202!3d46.07853347942308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4742b19bac52b2f7%3A0x3d820ed4a8561c6a!2sHeaven%20-%20The%20Cosmetics!5e0!3m2!1sen!2shu!4v1762856476341!5m2!1sen!2shu"
             width="100%"
