@@ -73,11 +73,6 @@ export default function HomePage() {
           ></iframe>
         </div>
       </section>
-
-      {/* ---------------- FOOTER ---------------- */}
-      <footer className="py-6 text-center text-sm text-muted-foreground border-t border-border">
-        © {new Date().getFullYear()} Lumé Wellness — Minden jog fenntartva.
-      </footer>
     </main>
   )
 }
