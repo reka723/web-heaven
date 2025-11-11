@@ -1,77 +1,103 @@
-import { ChartAreaInteractive } from '@/components/DemoChart'
-import { Briefcase, ShieldCheck, Rocket, Users } from 'lucide-react'
+import { Card, CardHeader, CardContent } from '@/components/ui/card'
+import { Separator } from '@/components/ui/separator'
 
 export default function AboutPage() {
   return (
-    <section className=" px-6 max-w-6xl mx-auto">
-      {/* Heading */}
-      <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold mb-4 text-foreground">About Us</h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          We build innovative, scalable, and secure digital solutions that help
-          businesses thrive in a connected world.
-        </p>
-      </div>
+    <section
+      id="about"
+      className="min-h-screen flex flex-col justify-center items-center text-center px-4 py-20 bg-cover bg-center"
+      style={{ backgroundImage: "url('/plant2.jpg')" }}
+    >
+      <Card className="bg-card/60 backdrop-blur-md p-10 rounded-2xl shadow-xl max-w-5xl w-full space-y-10 border border-border">
+        <CardHeader>
+          <h2 className="text-4xl font-bold text-primary">Rólunk</h2>
+        </CardHeader>
 
-      {/* Chart Section */}
-      <div className="mb-20">
-        <h2 className="text-2xl font-semibold mb-6 text-foreground">
-          Company Growth
-        </h2>
-        <div className="bg-card p-6 rounded-lg border border-border shadow-sm">
-          <ChartAreaInteractive />
-        </div>
-      </div>
-
-      {/* Mission & Values */}
-      <div className="grid md:grid-cols-2 gap-10 mb-20">
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold text-primary">Our Mission</h3>
-          <p className="text-muted-foreground">
-            To empower companies through technology — providing reliable,
-            future-proof, and user-centric solutions that drive real value.
+        <CardContent className="space-y-10">
+          {/* Introduction */}
+          <p className="text-muted-foreground leading-relaxed">
+            A{' '}
+            <span className="font-semibold text-foreground">Lumé Wellness</span>{' '}
+            célja, hogy vendégeink számára a testi-lelki feltöltődés, a
+            természetes szépség és a nyugalom egyaránt elérhető legyen.
+            Filozófiánk az, hogy a szépség belülről fakad – mi pedig segítünk,
+            hogy ez kívül is megmutatkozzon.
           </p>
-        </div>
-        <div className="space-y-4 ">
-          <h3 className="text-xl font-semibold text-primary text-left">
-            Our Values
-          </h3>
-          <ul className="space-y-3 text-muted-foreground">
-            <li className="flex items-start gap-3">
-              <ShieldCheck className="w-5 h-5 text-primary" />
-              <span>Trust & Transparency in every relationship</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <Rocket className="w-5 h-5 text-primary" />
-              <span>Innovation driven by purpose, not hype</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <Users className="w-5 h-5 text-primary" />
-              <span>Customer success as our top priority</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <Briefcase className="w-5 h-5 text-primary" />
-              <span>End-to-end ownership and accountability</span>
-            </li>
-          </ul>
-        </div>
-      </div>
 
-      {/* Call to Action */}
-      <div className="text-center bg-muted/40 py-12 px-6 rounded-lg shadow-sm">
-        <h3 className="text-2xl font-semibold text-foreground mb-4">
-          Ready to build the future together?
-        </h3>
-        <p className="text-muted-foreground mb-6">
-          Let’s partner to turn your ideas into powerful digital products.
-        </p>
-        <a
-          href="/contact"
-          className="inline-block bg-primary text-white px-6 py-3 rounded-md hover:bg-primary/90 transition"
-        >
-          Contact Us
-        </a>
-      </div>
+          <Separator className="bg-border/40" />
+
+          {/* Why Choose Us */}
+          <Card className="bg-muted/50 border border-border/30 shadow-sm text-left">
+            <CardHeader>
+              <h3 className="text-2xl font-semibold text-primary">
+                Miért válassz minket?
+              </h3>
+            </CardHeader>
+            <CardContent>
+              <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                <li>Professzionális, minősített szakemberek</li>
+                <li>Prémium minőségű, természetes alapanyagok</li>
+                <li>Személyre szabott kezelések</li>
+                <li>Nyugodt, barátságos környezet</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Separator className="bg-border/40" />
+
+          {/* Certificates & Partners */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+            <Card className="bg-muted/40 border border-border/20 shadow-sm">
+              <CardHeader>
+                <h3 className="text-xl font-semibold text-primary">
+                  Minősítéseink
+                </h3>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Szakmai képzéseinket és okleveleinket folyamatosan bővítjük,
+                  hogy mindig a legújabb technológiákkal és tudással várhassunk.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-muted/40 border border-border/20 shadow-sm">
+              <CardHeader>
+                <h3 className="text-xl font-semibold text-primary">
+                  Partnereink
+                </h3>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Eberlin, Klapp, és más prémium kozmetikai márkák – mert a
+                  minőség nálunk alap.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Separator className="bg-border/40" />
+
+          {/* Team */}
+          <div className="flex flex-wrap justify-center gap-12 pt-8">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="flex flex-col items-center">
+                <img
+                  src="/worker1.jpg"
+                  alt={`Team member ${i}`}
+                  className="w-36 h-36 md:w-44 md:h-44 rounded-full object-cover border-4 border-card shadow-md"
+                />
+                <h3 className="text-lg font-semibold text-primary mt-3">
+                  Emma Thompson
+                </h3>
+                <p className="text-muted-foreground text-sm">
+                  Senior Wellness Specialista
+                </p>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
     </section>
   )
 }

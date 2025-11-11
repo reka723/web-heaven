@@ -17,15 +17,15 @@ export function Header() {
   // Scroll sections
   const links = [
     { name: 'Home', to: 'home' },
-    { name: 'Services', to: 'services' },
     { name: 'About', to: 'about' },
-    { name: 'Testimonials', to: 'testimonials' },
+    { name: 'Services', to: 'services' },
+    { name: 'Gallery', to: 'gallery' },
     { name: 'Contact', to: 'contact' },
   ]
 
   return (
     <header className="w-full border-b border-border bg-background fixed top-0 z-50">
-      <div className="container mx-auto flex items-center justify-between px-4 py-3 lg:min-w-2/3">
+      <div className="container mx-auto flex items-center justify-between gap-12 px-4 py-3 lg:min-w-2/3">
         {/* Logo */}
         <div className="text-xl font-bold text-primary">Lumé Wellness</div>
 
@@ -38,7 +38,7 @@ export function Header() {
                 to={item.to}
                 smooth={true}
                 duration={500}
-                offset={-50} // adjust for fixed header
+                offset={-40} // adjust for fixed header
                 className={baseLinkStyles + ' ' + linkInactive}
                 activeClass={linkActive}
               >
@@ -46,8 +46,10 @@ export function Header() {
               </ScrollLink>
             ))}
           </div>
-          <ThemeSwitcher />
         </nav>
+        <div className="hidden md:flex">
+          <ThemeSwitcher />
+        </div>
 
         {/* Mobile Menu Button */}
         <div className="flex items-center gap-2 md:hidden">

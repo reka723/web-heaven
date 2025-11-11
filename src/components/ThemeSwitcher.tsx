@@ -39,21 +39,6 @@ export function ThemeSwitcher() {
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:gap-8">
       <div className="flex gap-2 items-center">
-        <span>Theme:</span>
-        {themes.map((t) => (
-          <button
-            key={t}
-            onClick={() => setTheme(t)}
-            className={`px-2 py-1 border rounded ${
-              theme === t ? 'bg-primary text-white' : 'bg-muted'
-            }`}
-          >
-            {t}
-          </button>
-        ))}
-      </div>
-
-      <div className="flex gap-2 items-center">
         <span>Mode:</span>
         {modes.map((m) => (
           <button
