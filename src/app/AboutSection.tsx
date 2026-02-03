@@ -4,7 +4,7 @@ import { Separator } from '@/components/ui/separator'
 export default function AboutPage() {
   return (
     <section
-      id="about"
+      id="rolunk"
       className="min-h-screen flex flex-col justify-center items-center text-center px-4 py-20 bg-cover bg-center"
       style={{ backgroundImage: "url('/plant2.jpg')" }}
     >

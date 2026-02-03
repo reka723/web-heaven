@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ThemeSwitcher } from '@/components/ThemeSwitcher'
 import { Menu, X } from 'lucide-react'
 import { Link as ScrollLink } from 'react-scroll'
+import { Link } from 'react-router'
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -16,22 +17,25 @@ export function Header() {
 
   // Scroll sections
   const links = [
-    { name: 'Home', to: 'home' },
-    { name: 'About', to: 'about' },
-    { name: 'Services', to: 'services' },
-    { name: 'Gallery', to: 'gallery' },
-    { name: 'Contact', to: 'contact' },
+    // { name: 'Főoldal', to: '/' },
+    { name: 'Szolgáltatások', to: 'szolgaltatasok' },
+    { name: 'Rólunk', to: 'rolunk' },
+    { name: 'GYIK', to: 'GYIK' },
+    { name: 'Kapcsolat', to: 'kapcsolat' },
   ]
 
   return (
     <header className="w-full border-b border-border bg-background fixed top-0 z-50">
       <div className="container mx-auto flex items-center justify-between gap-12 px-4 py-3 lg:min-w-2/3">
         {/* Logo */}
-        <div className="text-xl font-bold text-primary">Lumé Wellness</div>
+        <div className="text-xl font-bold text-primary">
+          <Link to={'/'}>Heaven - The Cosmetics</Link>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex">
           <div className="flex gap-2 items-center pr-12">
+            <Link to={'/home'}>Szolg2</Link>
             {links.map((item) => (
               <ScrollLink
                 key={item.to}
