@@ -1,42 +1,54 @@
-import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa'
+import { FaFacebookF, FaGoogle } from 'react-icons/fa'
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-muted/40 py-8 mt-12">
-      <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between text-sm text-muted-foreground">
-        <p className="mb-4 sm:mb-0">
-          &copy; {new Date().getFullYear()} MyCompany. All rights reserved.
+    <footer className="border-t border-border bg-muted/40 py-10 mt-12">
+      <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between text-sm text-muted-foreground space-y-4 sm:space-y-0">
+        {/* Brand & copyright */}
+        <p>
+          &copy; {new Date().getFullYear()} Heaven – The Cosmetics. All rights
+          reserved.
         </p>
 
+        {/* Documents */}
+        <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
+          <a
+            href="/ASZF.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground transition-colors"
+          >
+            ÁSZF
+          </a>
+          <a
+            href="/Cookies.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground transition-colors"
+          >
+            Cookies
+          </a>
+        </div>
+
+        {/* Social Icons */}
         <div className="flex items-center space-x-6">
-          <a
-            href="https://www.linkedin.com/company/mycompany"
+          {/* <a
+            href="https://www.facebook.com/mycompany"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"
-            aria-label="LinkedIn"
+            aria-label="Facebook"
           >
-            <FaLinkedin className="w-5 h-5" />
-          </a>
-
+            <FaFacebookF className="w-5 h-5" />
+          </a> */}
           <a
-            href="https://github.com/mycompany"
+            href="https://share.google/SsAKQ1omvz5BBsMK3"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"
-            aria-label="GitHub"
+            aria-label="Google"
           >
-            <FaGithub className="w-5 h-5" />
-          </a>
-
-          <a
-            href="https://twitter.com/mycompany"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-foreground transition-colors"
-            aria-label="Twitter"
-          >
-            <FaTwitter className="w-5 h-5" />
+            <FaGoogle className="w-5 h-5" />
           </a>
         </div>
       </div>

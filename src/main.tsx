@@ -5,10 +5,10 @@ import { RouterProvider } from 'react-router/dom'
 import '@/styles/globals.css'
 import { Layout } from './components/Layout'
 import HomePage from './app/HomePage'
-import AboutPage from './app/AboutSection'
-import ProductsPage from './app/ProdutcsSection'
+import AboutPage from './app/AboutPage'
 import ContactPage from './app/ContactSection'
-import { ServicesPage2 } from './app/Services2'
+import { ServicesPage } from './app/ServicesPage'
+import FAQPage from './app/FAQPage'
 
 const router = createBrowserRouter([
   {
@@ -17,8 +17,8 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: 'rolunk', element: <AboutPage /> },
-      { path: 'szolgaltatasok', element: <ServicesPage2 /> },
-      { path: 'gyik', element: <ProductsPage /> },
+      { path: 'szolgaltatasok', element: <ServicesPage /> },
+      { path: 'gyik', element: <FAQPage /> },
       { path: 'kapcsolat', element: <ContactPage /> },
       { path: 'elso-alkalom', element: <ContactPage /> },
     ],

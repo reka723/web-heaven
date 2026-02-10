@@ -1,57 +1,57 @@
 import { useEffect, useState, useLayoutEffect } from 'react'
+import { FaSun, FaMoon } from 'react-icons/fa'
+import { motion } from 'framer-motion'
 
-const themes = ['default', 'blue', 'rose', 'green'] as const
 const modes = ['light', 'dark'] as const
-
-type Theme = (typeof themes)[number]
 type Mode = (typeof modes)[number]
 
 export function ThemeSwitcher() {
-  const [theme, setTheme] = useState<Theme>('default')
   const [mode, setMode] = useState<Mode>('light')
 
-  // Apply theme immediately on initial render
+  // Apply mode immediately on initial render
   useLayoutEffect(() => {
-    const storedTheme = localStorage.getItem('theme') as Theme | null
     const storedMode = localStorage.getItem('mode') as Mode | null
-
-    if (storedTheme) setTheme(storedTheme)
     if (storedMode) setMode(storedMode)
   }, [])
 
-  // Update document classes when theme or mode changes
+  // Update document classes when mode changes
   useEffect(() => {
     const root = document.documentElement
-    root.classList.remove(...root.classList)
-
-    if (theme !== 'default') {
-      root.classList.add(`theme-${theme}`)
-    } else {
-      root.classList.add(`${theme}`)
-    }
-
     if (mode === 'dark') root.classList.add('dark')
-
-    localStorage.setItem('theme', theme)
+    else root.classList.remove('dark')
     localStorage.setItem('mode', mode)
-  }, [theme, mode])
+  }, [mode])
 
   return (
-    <div className="flex flex-col gap-4 sm:flex-row sm:gap-8">
-      <div className="flex gap-2 items-center">
-        <span>Mode:</span>
-        {modes.map((m) => (
-          <button
+    <div className="flex items-center gap-4">
+      {modes.map((m) => {
+        const isActive = mode === m
+        return (
+          <motion.button
             key={m}
             onClick={() => setMode(m)}
-            className={`px-2 py-1 border rounded ${
-              mode === m ? 'bg-primary text-white' : 'bg-muted'
-            }`}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95, rotate: 20 }}
+            animate={{ rotate: isActive ? 360 : 0 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className={`
+              p-2 rounded-full border border-border transition-colors duration-300
+              flex items-center justify-center
+              ${isActive ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'}
+              hover:bg-accent-foreground hover:text-white
+            `}
+            aria-label={
+              m === 'light' ? 'Switch to light mode' : 'Switch to dark mode'
+            }
           >
-            {m}
-          </button>
-        ))}
-      </div>
+            {m === 'light' ? (
+              <FaSun className="w-5 h-5" />
+            ) : (
+              <FaMoon className="w-5 h-5" />
+            )}
+          </motion.button>
+        )
+      })}
     </div>
   )
 }

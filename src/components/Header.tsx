@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { ThemeSwitcher } from '@/components/ThemeSwitcher'
 import { Menu, X } from 'lucide-react'
-import { Link as ScrollLink } from 'react-scroll'
-import { Link } from 'react-router'
+import { Link, useLocation } from 'react-router-dom'
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const location = useLocation() // to highlight active route
 
   const baseLinkStyles =
     'block px-4 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors'
@@ -15,42 +15,47 @@ export function Header() {
 
   const linkActive = 'text-primary bg-muted'
 
-  // Scroll sections
+  // Routes for navigation
   const links = [
-    // { name: 'Főoldal', to: '/' },
-    { name: 'Szolgáltatások', to: 'szolgaltatasok' },
-    { name: 'Rólunk', to: 'rolunk' },
-    { name: 'GYIK', to: 'GYIK' },
-    { name: 'Kapcsolat', to: 'kapcsolat' },
+    { name: 'Szolgáltatások', to: '/szolgaltatasok' },
+    { name: 'Rólunk', to: '/rolunk' },
+    { name: 'GYIK', to: '/gyik' },
+    { name: 'Kapcsolat', to: '/kapcsolat' },
+    { name: 'Első alkalom', to: '/elso-alkalom' },
   ]
 
   return (
     <header className="w-full border-b border-border bg-background fixed top-0 z-50">
       <div className="container mx-auto flex items-center justify-between gap-12 px-4 py-3 lg:min-w-2/3">
         {/* Logo */}
-        <div className="text-xl font-bold text-primary">
-          <Link to={'/'}>Heaven - The Cosmetics</Link>
+        <div className="text-xl font-bold text-primary overflow-hidden h-14">
+          <Link to={'/'}>
+            <img
+              src="/icon.png"
+              alt="Logo"
+              className="h-16 w-auto" // height fixed, width auto
+            />
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex">
           <div className="flex gap-2 items-center pr-12">
-            <Link to={'/home'}>Szolg2</Link>
             {links.map((item) => (
-              <ScrollLink
+              <Link
                 key={item.to}
                 to={item.to}
-                smooth={true}
-                duration={500}
-                offset={-40} // adjust for fixed header
-                className={baseLinkStyles + ' ' + linkInactive}
-                activeClass={linkActive}
+                className={`${baseLinkStyles} ${
+                  location.pathname === item.to ? linkActive : linkInactive
+                }`}
               >
                 {item.name}
-              </ScrollLink>
+              </Link>
             ))}
           </div>
         </nav>
+
+        {/* Desktop Theme Switcher */}
         <div className="hidden md:flex">
           <ThemeSwitcher />
         </div>
@@ -74,17 +79,16 @@ export function Header() {
       {mobileOpen && (
         <div className="md:hidden border-t border-border px-4 pb-4 bg-background">
           {links.map((item) => (
-            <ScrollLink
+            <Link
               key={item.to}
               to={item.to}
-              smooth={true}
-              duration={500}
-              offset={-80}
-              className={baseLinkStyles + ' ' + linkInactive}
+              className={`${baseLinkStyles} ${
+                location.pathname === item.to ? linkActive : linkInactive
+              }`}
               onClick={() => setMobileOpen(false)} // close menu on click
             >
               {item.name}
-            </ScrollLink>
+            </Link>
           ))}
           {/* Mobile Theme Switcher */}
           <div className="mt-4">

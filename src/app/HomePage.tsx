@@ -57,18 +57,22 @@ export default function HomePage() {
           className="max-w-6xl mx-auto px-6"
         >
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            {/* IMAGE */}
-            <div className="flex justify-center md:justify-start">
-              <img
-                src="/plant2.jpg"
-                alt="Natural spa atmosphere"
-                className="w-80 md:w-full max-w-md rounded-3xl object-cover shadow-sm"
-              />
-            </div>
-
             {/* TEXT */}
-            <div className="space-y-18 text-center md:text-left">
+            <div className="space-y-10 text-center md:text-left order-2 md:order-1">
               <div className="space-y-4">
+                <h2 className="text-3xl md:text-4xl font-light tracking-wide">
+                  Kinek szól a <br /> Heaven – The Cosmetics?
+                </h2>
+
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Azoknak, akik nem csak egy kezelést keresnek, hanem egy
+                  nyugodt, biztonságos teret, ahol figyelnek rájuk, és nincs
+                  sietség. Ha fontos számodra a diszkréció és a személyre
+                  szabott figyelem, jó helyen jársz.
+                </p>
+              </div>
+
+              <div className="border-t border-border pt-6 space-y-4">
                 <h2 className="text-3xl md:text-4xl font-light tracking-wide">
                   Az első pillanattól fontos vagy…
                 </h2>
@@ -79,19 +83,15 @@ export default function HomePage() {
                   precizitás, a diszkréció és a nyugalom természetes alapérték.
                 </p>
               </div>
+            </div>
 
-              <div className="border-t border-border pt-6 space-y-4">
-                <h2 className="text-3xl md:text-4xl font-light tracking-wide">
-                  Kinek szól a Heaven – The Cosmetics?
-                </h2>
-
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  Azoknak, akik nem csak egy kezelést keresnek, hanem egy
-                  nyugodt, biztonságos teret, ahol figyelnek rájuk, és nincs
-                  sietség. Ha fontos számodra a diszkréció és a személyre
-                  szabott figyelem, jó helyen jársz.
-                </p>
-              </div>
+            {/* IMAGE */}
+            <div className="hidden md:flex justify-center md:justify-start order-1 md:order-2">
+              <img
+                src="/plant2.jpg"
+                alt="Natural spa atmosphere"
+                className="w-64 md:w-full max-w-md rounded-3xl object-cover shadow-sm md:shadow-md border-secondary border-8"
+              />
             </div>
           </div>
         </motion.div>
@@ -114,15 +114,15 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-10 ">
             {[
               {
-                title: 'Kozmetikai kezelések',
+                title: '🌿 Kozmetikai kezelések',
                 text: 'Személyre szabott arckezelések és speciális bőrmegoldások.',
               },
               {
-                title: 'Dekor kezelések',
+                title: '✨ Dekor kezelések',
                 text: 'Természetes hatású szemöldök- és szempillakezelések.',
               },
               {
-                title: 'Wax kezelések',
+                title: '🤍 Wax kezelések',
                 text: 'Diszkrét, professzionális wax kezelések minden területen.',
               },
             ].map((s, i) => (
@@ -130,8 +130,8 @@ export default function HomePage() {
                 key={i}
                 className="bg-secondary text-secondary-foreground rounded-3xl p-8 shadow-sm hover:shadow-md transition"
               >
-                <h3 className="font-medium text-lg mb-3">{s.title}</h3>
-                <p className="text-sm leading-relaxed">{s.text}</p>
+                <h3 className="font-medium text-2xl mb-3">{s.title}</h3>
+                <p className="text-m leading-relaxed">{s.text}</p>
               </div>
             ))}
           </div>
@@ -148,6 +148,7 @@ export default function HomePage() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="max-w-5xl mx-auto px-6 space-y-12"
         >
+          {/* Heading */}
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-4xl font-light tracking-wide">
               Merre tovább?
@@ -159,51 +160,45 @@ export default function HomePage() {
             </p>
           </div>
 
+          {/* Links */}
           <div className="space-y-6 max-w-3xl mx-auto">
-            <a
-              href="/szolgaltatasok"
-              className="group flex items-center justify-between border-b border-border py-6 transition hover:pl-2"
-            >
-              <div>
-                <h3 className="text-xl font-light">Szolgáltatások</h3>
-                <p className="text-sm text-muted-foreground">
-                  Kezelések, wax, dekor és bőrápolás egy helyen.
-                </p>
-              </div>
-              <span className="text-muted-foreground group-hover:text-foreground transition">
-                →
-              </span>
-            </a>
+            {[
+              {
+                href: '/szolgaltatasok',
+                title: 'Szolgáltatások',
+                description: 'Kezelések, wax, dekor és bőrápolás egy helyen.',
+              },
+              {
+                href: '/elso-alkalom',
+                title: 'Első alkalom',
+                description:
+                  'Minden, amit érdemes tudnod az első látogatás előtt.',
+              },
+              {
+                href: '/kapcsolat',
+                title: 'Kapcsolat',
+                description: 'Időpontfoglalás, elérhetőség, térkép.',
+              },
+            ].map((link, i) => (
+              <a
+                key={i}
+                href={link.href}
+                className="group flex items-center justify-between border-b border-secondary py-6 px-4 transition-all duration-300 ease-out hover:bg-secondary/10 hover:shadow-md rounded-xl"
+              >
+                <div className="space-y-1">
+                  <h3 className="text-xl font-light group-hover:text-primary transition-all duration-300 relative">
+                    {link.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                    {link.description}
+                  </p>
+                </div>
 
-            <a
-              href="/elso-alkalom"
-              className="group flex items-center justify-between border-b border-border py-6 transition hover:pl-2"
-            >
-              <div>
-                <h3 className="text-xl font-light">Első alkalom</h3>
-                <p className="text-sm text-muted-foreground">
-                  Minden, amit érdemes tudnod az első látogatás előtt.
-                </p>
-              </div>
-              <span className="text-muted-foreground group-hover:text-foreground transition">
-                →
-              </span>
-            </a>
-
-            <a
-              href="/kapcsolat"
-              className="group flex items-center justify-between py-6 transition hover:pl-2"
-            >
-              <div>
-                <h3 className="text-xl font-light">Kapcsolat</h3>
-                <p className="text-sm text-muted-foreground">
-                  Időpontfoglalás, elérhetőség, térkép.
-                </p>
-              </div>
-              <span className="text-muted-foreground group-hover:text-foreground transition">
-                →
-              </span>
-            </a>
+                <span className="text-muted-foreground group-hover:text-primary transition-all duration-300 transform group-hover:translate-x-2">
+                  →
+                </span>
+              </a>
+            ))}
           </div>
         </motion.div>
       </section>

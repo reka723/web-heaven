@@ -1,8 +1,4 @@
-import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Link } from 'react-scroll'
-
-const servicesData = [
+export const servicesData = [
   {
     id: 1,
     title: 'Wellness kezelések – Hegkezelések',
@@ -128,74 +124,78 @@ const servicesData = [
   },
 ]
 
-export const ServicesPage = () => {
-  return (
-    <section
-      id="szolgaltatasok"
-      className="min-h-screen flex flex-col justify-center px-4 py-10 bg-gradient-to-b from-pink-50 to-white dark:from-background dark:bg-background"
-    >
-      <h2 className="text-4xl font-bold text-primary text-center mb-12">
-        Szolgáltatásaink
-      </h2>
+export const generalFAQ = [
+  {
+    question: 'Hogyan tudok időpontot foglalni?',
+    answer: 'Időpontot telefonon tudsz foglalni. +36 20 347 7262',
+    icon: '📞',
+  },
+  {
+    question: 'Első alkalommal mire számíthatok?',
+    answer:
+      'Az első alkalom egy rövid egyeztetéssel kezdődik, ahol átbeszéljük az igényeidet és kérdéseidet.',
+    icon: '🌸',
+  },
+  {
+    question: 'Mennyivel érkezzek a kezelés előtt?',
+    answer:
+      'Érdemes 5–10 perccel korábban érkezni, hogy kényelmesen fel tudj készülni.',
+    icon: '⏱️',
+  },
+  {
+    question: 'Milyen fizetési módok érhetők el?',
+    answer: 'A kozmetikában készpénzes és elektronikus fizetés is elérhető.',
+    icon: '💳',
+  },
+  {
+    question: 'Lemondhatom vagy módosíthatom az időpontomat?',
+    answer:
+      'Igen. Kérjük, hogy legalább 12-24 órával a kezelés előtt jelezd a módosítást vagy lemondást.',
+    icon: '❗',
+  },
+  {
+    question: 'Férfi vendégeket is fogadtok?',
+    answer:
+      'Igen, bizonyos szolgáltatásaink férfi vendégek számára is elérhetők.',
+    icon: '🧑',
+  },
+  {
+    question: 'Terhesség alatt igénybe vehetők a kezelések?',
+    answer:
+      'Egyes kezelések igen, mások nem. Ilyen esetben javasolt előzetesen egyeztetni.',
+    icon: '🤰',
+  },
+]
 
-      <div className="max-w-6xl mx-auto space-y-24">
-        {servicesData.map((service) => (
-          <div
-            key={service.id}
-            className={`flex flex-col md:flex-row items-center gap-10 ${
-              service.reverse ? 'md:flex-row-reverse' : ''
-            }`}
-          >
-            <img
-              src={service.image}
-              alt={service.imageAlt}
-              className="w-full md:w-1/2 rounded-2xl shadow-lg object-cover"
-            />
-
-            <Card className="md:w-1/2 bg-card/90 backdrop-blur border border-border p-6 shadow-md">
-              <CardHeader>
-                <h3 className="text-2xl font-semibold text-primary">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mt-2">
-                  {service.description}
-                </p>
-              </CardHeader>
-
-              <CardContent>
-                <div className="space-y-3 text-muted-foreground">
-                  {service.details.map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="border-b pb-2 border-b-accent-foreground"
-                    >
-                      <div className="font-semibold">{item.name}</div>
-                      <div className="text-sm">{item.duration}</div>
-                      {/* <div className="text-primary font-semibold">
-                        {item.price}
-                      </div> */}
-                    </div>
-                  ))}
-                </div>
-
-                {service.note && (
-                  <p className="text-sm italic text-muted-foreground mt-4">
-                    {service.note}
-                  </p>
-                )}
-
-                <Link to="contact" smooth={true} duration={600} offset={-40}>
-                  <Button className="mt-6 w-full hover:bg-primary/90">
-                    Időpontot foglalok
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
-          </div>
-        ))}
-      </div>
-    </section>
-  )
-}
-
-export default ServicesPage
+export const waxFAQ = [
+  {
+    question: 'Fájdalmas a wax?',
+    answer:
+      'A wax kellemetlen lehet, de a fájdalom mértéke egyénenként eltérő. A kezelések során figyelünk a megfelelő technikára és tempóra, hogy a lehető legkíméletesebb élményt nyújtsuk.',
+    icon: '🌿',
+  },
+  {
+    question: 'Mennyi ideig tart egy wax?',
+    answer:
+      'Az időtartam a kezelt területtől és az egyéni adottságoktól függ. A kezelések többsége 15–50 perc között mozog.',
+    icon: '⏱️',
+  },
+  {
+    question: 'Milyen hosszú szőr szükséges a waxhoz?',
+    answer:
+      'A waxolás akkor tud igazán szép és alapos eredményt adni, ha a szőrszálak már megfelelő hosszúságúak. Ideális esetben ez körülbelül 0,5–1 cm.',
+    icon: '✂️',
+  },
+  {
+    question: 'Első alkalommal is lehet intim waxot kérni?',
+    answer:
+      'Igen, természetesen. Sok vendégünk első alkalommal is az intim waxot választja. A kezelést diszkréten, ítélkezés nélkül végezzük.',
+    icon: '🌸',
+  },
+  {
+    question: 'Menstruáció idején ajánlott a wax?',
+    answer:
+      'Az intim wax menstruáció ideje alatt is elvégezhető, amennyiben a vendég a kezelés során komfortosan érzi magát, és megfelelő higiéniai eszközt (tampon vagy menstruációs kehely) használ.',
+    icon: '🩸',
+  },
+]
