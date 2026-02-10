@@ -16,10 +16,11 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: 'about', element: <AboutPage /> },
-      { path: 'home', element: <ServicesPage2 /> },
-      { path: 'products', element: <ProductsPage /> },
-      { path: 'contact', element: <ContactPage /> },
+      { path: 'rolunk', element: <AboutPage /> },
+      { path: 'szolgaltatasok', element: <ServicesPage2 /> },
+      { path: 'gyik', element: <ProductsPage /> },
+      { path: 'kapcsolat', element: <ContactPage /> },
+      { path: 'elso-alkalom', element: <ContactPage /> },
     ],
   },
 ])
