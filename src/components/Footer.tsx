@@ -1,4 +1,4 @@
-import { FaFacebookF, FaGoogle } from 'react-icons/fa'
+import { FaGoogle } from 'react-icons/fa'
 
 export function Footer() {
   return (
