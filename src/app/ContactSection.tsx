@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { Mail, MessageSquare, User } from 'lucide-react'
+import { Mail, MapPin, MessageSquare, Phone, User } from 'lucide-react'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
@@ -22,7 +23,6 @@ export default function ContactPage() {
     setStatus('idle')
 
     try {
-      // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1000))
       setStatus('success')
       setFormData({ name: '', email: '', message: '' })
@@ -34,104 +34,167 @@ export default function ContactPage() {
   }
 
   return (
-    <section className="mb-20 max-w-full mx-12">
-      <h1 className="text-3xl font-semibold mb-4">Get in Touch</h1>
-      <p className="text-muted-foreground mb-2">
-        We'd love to hear from you! Whether you have a project in mind, a
-        question, or just want to connect — feel free to reach out.
-      </p>
-      <p className="text-muted-foreground">
-        Email us at{' '}
-        <a href="mailto:hello@mycompany.com" className="text-primary underline">
-          hello@mycompany.com
-        </a>
-      </p>
+    <main className="min-h-screen bg-background px-4 py-20">
+      {/* Header */}
+      <header className="max-w-4xl mx-auto text-center mb-20">
+        <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+          Kapcsolat
+        </h1>
+        <p className="text-muted-foreground text-lg">
+          Vedd fel velünk a kapcsolatot bizalommal.
+        </p>
+      </header>
 
-      <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Name Field */}
-          <div className="relative">
-            <User className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5" />
-            <Input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              placeholder="Full Name"
-              className="pl-10"
-              aria-label="Full Name"
+      <div className="max-w-6xl mx-auto space-y-12">
+        {/* MAIN CARD */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+          whileHover={{
+            scale: 1.01,
+            boxShadow: '0 12px 24px rgba(0,0,0,0.12)',
+          }}
+          className="grid md:grid-cols-2 bg-card rounded-xl shadow overflow-hidden"
+        >
+          {/* LEFT SIDE — IMAGE */}
+          <div className="h-64 md:h-auto">
+            <img
+              src="/plant2.jpg" // <-- cseréld saját képre
+              alt="Heaven – The Cosmetics"
+              className="w-full h-full object-cover"
             />
           </div>
 
-          {/* Email Field */}
-          <div className="relative">
-            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5" />
-            <Input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              placeholder="you@example.com"
-              className="pl-10"
-              aria-label="Email Address"
-            />
-          </div>
+          {/* RIGHT SIDE */}
+          <div className="p-8 md:p-10 space-y-8 flex flex-col justify-evenly">
+            {/* CONTACT INFO */}
+            <div className="space-y-5 text-muted-foreground">
+              <h3 className="text-2xl font-semibold text-primary">
+                Elérhetőségek
+              </h3>
 
-          {/* Message Field */}
-          <div className="relative">
-            <MessageSquare className="absolute left-3 top-4 text-muted-foreground w-5 h-5" />
-            <Textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              rows={5}
-              placeholder="Your message"
-              className="pl-10 pt-3"
-              aria-label="Your Message"
-            />
-          </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 mt-1 text-primary" />
+                <div>
+                  <p className="font-medium text-foreground">Cím</p>
+                  <p>7634 Pécs, Ürögi fasor 2/B.</p>
+                </div>
+              </div>
 
-          {/* Submit Button + Status */}
-          <div>
-            <Button type="submit" disabled={isSubmitting} className="w-full">
-              {isSubmitting ? 'Sending...' : 'Send Message'}
-            </Button>
-            {status === 'success' && (
-              <p className="mt-2 text-sm text-green-600">
-                Thank you for your message!
-              </p>
-            )}
-            {status === 'error' && (
-              <p className="mt-2 text-sm text-red-600">
-                Something went wrong. Please try again later.
-              </p>
-            )}
-          </div>
-        </form>
+              <div className="flex items-start gap-3">
+                <Phone className="w-5 h-5 mt-1 text-primary" />
+                <div>
+                  <p className="font-medium text-foreground">Telefon</p>
+                  <a
+                    href="tel:+36203477262"
+                    className="hover:text-primary transition"
+                  >
+                    +36 20 347 7262
+                  </a>
+                </div>
+              </div>
 
-        {/* Google Map */}
-        <div className="relative overflow-hidden w-full h-96 rounded-lg shadow-lg">
+              <div className="flex items-start gap-3">
+                <Mail className="w-5 h-5 mt-1 text-primary" />
+                <div>
+                  <p className="font-medium text-foreground">E-mail</p>
+                  <a
+                    href="mailto:pecs@hellohc.hu"
+                    className="hover:text-primary transition"
+                  >
+                    pecs@hellohc.hu
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* DIVIDER */}
+            <div className="border-t pt-6">
+              <h3 className="text-2xl font-semibold text-primary mb-6">
+                Üzenet küldése
+              </h3>
+
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="relative">
+                  <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    placeholder="Teljes név"
+                    className="pl-10"
+                  />
+                </div>
+
+                <div className="relative">
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    placeholder="email@pelda.hu"
+                    className="pl-10"
+                  />
+                </div>
+
+                <div className="relative">
+                  <MessageSquare className="absolute left-3 top-4 w-5 h-5 text-muted-foreground" />
+                  <Textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={4}
+                    placeholder="Írd meg üzeneted..."
+                    className="pl-10 pt-3"
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full"
+                >
+                  {isSubmitting ? 'Küldés...' : 'Üzenet küldése'}
+                </Button>
+
+                {status === 'success' && (
+                  <p className="text-sm text-green-600">Köszönjük üzeneted!</p>
+                )}
+                {status === 'error' && (
+                  <p className="text-sm text-red-600">
+                    Hiba történt. Próbáld újra.
+                  </p>
+                )}
+              </form>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* MAP BELOW CARD */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="bg-card rounded-xl shadow overflow-hidden"
+        >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.011741312318!2d-122.419415684681!3d37.774929779759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809a2c5b3b7f%3A0x5e3c6d3b4d8d4e6a!2sSan%20Francisco%20City%20Hall!5e0!3m2!1sen!2sus!4v1633021077756!5m2!1sen!2sus"
+            src="https://www.google.com/maps?q=7634+Pécs,+Ürögi+fasor+2/B&output=embed"
             width="100%"
-            height="100%"
+            height="450"
             style={{ border: 0 }}
-            allowFullScreen
             loading="lazy"
-            title="Company Location"
+            title="Heaven – The Cosmetics Pécs"
           />
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black opacity-50"></div>
-          <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-            <span className="text-white text-xl font-semibold">
-              Our Location
-            </span>
-          </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </main>
   )
 }

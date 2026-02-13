@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router'
 
 export default function AboutPage() {
   const fadeInLeft = {
@@ -34,10 +35,14 @@ export default function AboutPage() {
           <div className="space-y-2">
             <h2 className="text-2xl font-semibold text-primary">BEVEZETŐ</h2>
             <p className="text-muted-foreground leading-relaxed">
-              A Heaven azért jött létre, hogy legyen egy hely, ahol nem kell
-              megfelelni. Ahol a kozmetikai kezelés nem egy futószalagos
-              szolgáltatás, hanem egy nyugodt, figyelmes találkozás – önmagaddal
-              is.
+              A Heaven – The Cosmetics-ben az első pillanattól fontos vagy. Itt
+              nem siettetünk, nem ítélkezünk, nem „csak egy kezelés” történik –
+              hanem figyelmes, biztonságos gondoskodás. A Heaven egy olyan
+              kozmetikai tér, ahol a precizitás, a diszkréció és a nyugalom
+              természetes alapérték. Legyen szó első alkalomról vagy rendszeres
+              kezelésekről, nálunk minden lépés a te komfortodhoz igazodik.
+              <br />
+              <strong>Időpontot foglalok: +36 20 347 7262</strong>
             </p>
           </div>
         </motion.section>
@@ -99,11 +104,13 @@ export default function AboutPage() {
             <p className="text-muted-foreground leading-relaxed">
               Sokan érkeznek hozzánk úgy, hogy izgulnak, bizonytalanok, vagy
               korábbi rossz élményük volt. Ez teljesen rendben van. Az első
-              alkalom nálunk nem a „teljesítményről” szól, hanem a
-              megérkezésről, az igények átbeszéléséről és a bizalom
-              kialakításáról. Csak az történik, amihez te is komfortosan tudsz
-              kapcsolódni.
+              alkalom nálunk a megérkezésről, az igények átbeszéléséről és a
+              bizalom kialakításáról szól. Csak az történik, amihez te is
+              komfortosan tudsz kapcsolódni.
             </p>
+            <Link className="underline text-primary" to="/elso-alkalom">
+              Tudj meg többet
+            </Link>
           </div>
         </motion.section>
         {/* Miért Heaven */}
@@ -121,28 +128,14 @@ export default function AboutPage() {
               <li>gyengéd</li>
               <li>professzionális</li>
               <li>biztonságos</li>
-              <li>emberi egyszerre</li>
+              <li>diszkrét</li>
             </ul>
             <p className="text-muted-foreground leading-relaxed mt-2">
-              A Heaven – The Cosmetics nem ígér tökéletességet. Viszont
-              jelenlétet, figyelmet és tiszteletet igen.
-            </p>
-          </div>
-        </motion.section>
-        {/* Zárás */}
-        <motion.section
-          variants={fadeInRight}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="flex items-start gap-4 bg-card p-8 rounded-xl shadow-lg"
-        >
-          <span className="text-4xl">💌</span>
-          <div className="space-y-2">
-            <h2 className="text-2xl font-semibold text-primary">ZÁRÁS</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Ha fontos számodra, hogy egy olyan helyre érkezz, ahol valóban
-              számítasz – szeretettel várunk a Heaven – The Cosmetics-ben.
+              A Heaven - The Cosmetics azoknak szól, akik nem csak egy kezelést
+              keresnek, hanem egy nyugodt, biztonságos teret, ahol figyelnek
+              rájuk, és nincs sietség. Ha fontos számodra a diszkréció, a
+              személyre szabott figyelem és az, hogy jó érzéssel érkezz meg és
+              távozz, jó helyen jársz.
             </p>
           </div>
         </motion.section>

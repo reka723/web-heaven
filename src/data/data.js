@@ -95,34 +95,135 @@ export const servicesData = [
     note: '',
     reverse: true,
   },
-  {
-    id: 5,
-    title: 'WAX kezelések',
-    image: '/wellness.jpg',
-    imageAlt: 'Wax kezelések',
-    description:
-      'Pierrewax termékekkel végzett, bőrbarát, luxus érzetű szőrtelenítés.',
-    details: [
-      { name: 'Lábszár gyantázás', duration: '30–40 perc', price: '—' },
-      { name: 'Comb gyantázás', duration: '30 perc', price: '—' },
-      { name: 'Teljes láb gyantázás', duration: '60 perc', price: '—' },
-      { name: 'Hónalj gyantázás', duration: '15–20 perc', price: '—' },
-      { name: 'Kar gyantázás', duration: '30–40 perc', price: '—' },
-      { name: 'Bajusz gyantázás', duration: '10 perc', price: '—' },
-      { name: 'Áll gyantázás', duration: '10–15 perc', price: '—' },
-      { name: 'Teljes arc gyantázás', duration: '30 perc', price: '—' },
-      { name: 'Bikini wax', duration: '20–30 perc', price: '—' },
-      { name: 'Brazil wax', duration: '30–40 perc', price: '—' },
-      {
-        name: 'Brazil wax + fenék belső ív',
-        duration: '45–50 perc',
-        price: '—',
-      },
-    ],
-    note: '',
-    reverse: false,
-  },
 ]
+
+export const waxServices = {
+  id: 5,
+  title: 'WAX kezelések',
+  image: '/wellness.jpg',
+  imageAlt: 'Wax kezelések',
+  description:
+    'Pierrewax termékekkel végzett, bőrbarát, luxus érzetű szőrtelenítés.',
+  details: [
+    {
+      name: 'Lábszár wax',
+      duration: '30–40 perc',
+      price: '—',
+      gender: 'female',
+    },
+    {
+      name: 'Comb wax',
+      duration: '30 perc',
+      price: '—',
+      gender: 'female',
+    },
+    {
+      name: 'Teljes láb wax',
+      duration: '60 perc',
+      price: '—',
+      gender: 'female',
+    },
+    {
+      name: 'Hónalj wax',
+      duration: '15–20 perc',
+      price: '—',
+      gender: 'female',
+    },
+    {
+      name: 'Kar wax',
+      duration: '30–40 perc',
+      price: '—',
+      gender: 'female',
+    },
+    {
+      name: 'Bajusz wax',
+      duration: '10 perc',
+      price: '—',
+      gender: 'female',
+    },
+    {
+      name: 'Áll wax',
+      duration: '10–15 perc',
+      price: '—',
+      gender: 'female',
+    },
+    {
+      name: 'Teljes arc wax',
+      duration: '30 perc',
+      price: '—',
+      gender: 'female',
+    },
+    {
+      name: 'Bikini wax',
+      duration: '20–30 perc',
+      price: '—',
+      gender: 'female',
+    },
+    {
+      name: 'Brazil wax',
+      duration: '30–40 perc',
+      price: '—',
+      gender: 'female',
+    },
+    {
+      name: 'Brazil wax + fenék belső ív',
+      duration: '45–50 perc',
+      price: '—',
+      gender: 'female',
+    },
+
+    {
+      name: 'Lábszár wax',
+      duration: '30–40 perc',
+      price: '—',
+      gender: 'male',
+    },
+    {
+      name: 'Comb wax',
+      duration: '30 perc',
+      price: '—',
+      gender: 'male',
+    },
+    {
+      name: 'Teljes láb wax',
+      duration: '60 perc',
+      price: '—',
+      gender: 'male',
+    },
+    {
+      name: 'Hónalj wax',
+      duration: '15–20 perc',
+      price: '—',
+      gender: 'male',
+    },
+    {
+      name: 'Kar wax',
+      duration: '30–40 perc',
+      price: '—',
+      gender: 'male',
+    },
+    {
+      name: 'Bajusz wax',
+      duration: '10 perc',
+      price: '—',
+      gender: 'male',
+    },
+    {
+      name: 'Áll wax',
+      duration: '10–15 perc',
+      price: '—',
+      gender: 'male',
+    },
+    {
+      name: 'Teljes arc wax',
+      duration: '30 perc',
+      price: '—',
+      gender: 'male',
+    },
+  ],
+  note: '',
+  reverse: false,
+}
 
 export const generalFAQ = [
   {

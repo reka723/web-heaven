@@ -8,10 +8,9 @@ export function Header() {
   const location = useLocation() // to highlight active route
 
   const baseLinkStyles =
-    'block px-4 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors'
+    'block px-4 py-2 rounded-md text-m font-medium cursor-pointer transition-colors'
 
-  const linkInactive =
-    'text-muted-foreground hover:text-foreground hover:bg-muted'
+  const linkInactive = 'text-muted-foreground hover:text-foreground'
 
   const linkActive = 'text-primary bg-muted'
 
