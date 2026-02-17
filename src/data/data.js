@@ -37,12 +37,12 @@ export const servicesData = [
         price: '10.600 Ft',
       },
       {
-        name: 'Kímélő arctisztító kezelés I. típúsú',
+        name: 'Kímélő arctisztító kezelés I. típusú',
         duration: 120,
         price: '16.700 Ft',
       },
       {
-        name: 'Kímélő arctisztító kezelés II. típúsú',
+        name: 'Kímélő arctisztító kezelés II. típusú',
         duration: 120,
         price: '18.500 Ft',
       },
