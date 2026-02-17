@@ -34,10 +34,7 @@ export default function ContactPage() {
       await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({
-          'form-name': 'contact',
-          ...formData,
-        }),
+        body: new URLSearchParams(formData).toString(),
       })
 
       setStatus('success')
@@ -131,7 +128,7 @@ export default function ContactPage() {
                 name="contact"
                 method="POST"
                 data-netlify="true"
-                onSubmit={handleSubmit}
+                // onSubmit={handleSubmit}
                 className="space-y-5"
               >
                 <input type="hidden" name="form-name" value="contact" />
