@@ -15,36 +15,37 @@ export default function ContactPage() {
   ) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
+    console.log(setIsSubmitting, setStatus)
   }
 
-  const encode = (data: Record<string, string>) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
-      )
-      .join('&')
-  }
+  // const encode = (data: Record<string, string>) => {
+  //   return Object.keys(data)
+  //     .map(
+  //       (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+  //     )
+  //     .join('&')
+  // }
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setStatus('idle')
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault()
+  //   setIsSubmitting(true)
+  //   setStatus('idle')
 
-    try {
-      await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString(),
-      })
+  //   try {
+  //     await fetch('/', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //       body: new URLSearchParams(formData).toString(),
+  //     })
 
-      setStatus('success')
-      setFormData({ name: '', email: '', message: '' })
-    } catch {
-      setStatus('error')
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
+  //     setStatus('success')
+  //     setFormData({ name: '', email: '', message: '' })
+  //   } catch {
+  //     setStatus('error')
+  //   } finally {
+  //     setIsSubmitting(false)
+  //   }
+  // }
 
   return (
     <main className="min-h-screen bg-background px-4 py-20">
