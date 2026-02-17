@@ -75,9 +75,9 @@ export const ServicesPage = () => {
               {/* Header Row */}
               <ul className="flex justify-between font-semibold px-4 py-2 bg-muted sticky top-0 z-10">
                 <li className="flex justify-between w-full">
-                  <span className="w-2/6">Megnevezés</span>
+                  <span className="sm:w-2/6 w-3/6">Megnevezés</span>
                   <span className="w-1/6 text-center">Idő</span>
-                  <span className="w-2/6 text-center">Első alkalommal</span>
+                  <span className="w-2/6 text-center">Első alkalom</span>
                   <span className="w-1/6 text-right">Ár</span>
                 </li>
               </ul>

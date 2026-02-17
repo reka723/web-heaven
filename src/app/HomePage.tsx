@@ -169,8 +169,8 @@ export default function HomePage() {
                 description: 'Kezelések, wax, dekor és bőrápolás egy helyen.',
               },
               {
-                href: '/elso-alkalom',
-                title: 'Első alkalom',
+                href: '/GYIK',
+                title: 'GYIK',
                 description:
                   'Minden, amit érdemes tudnod az első látogatás előtt.',
               },
