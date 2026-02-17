@@ -166,7 +166,7 @@ export default function HomePage() {
               {
                 href: '/szolgaltatasok',
                 title: 'Szolgáltatások',
-                description: 'Kezelések, dekor, bőrápolás és wax egy helyen.',
+                description: 'Dekorkezelések, bőrápolás és wax egy helyen.',
               },
               {
                 href: '/GYIK',
