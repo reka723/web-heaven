@@ -88,7 +88,7 @@ export default function HomePage() {
             {/* IMAGE */}
             <div className="hidden md:flex justify-center md:justify-start order-1 md:order-2">
               <img
-                src="/plant2.jpg"
+                src="/spa.jpg"
                 alt="Natural spa atmosphere"
                 className="w-64 md:w-full max-w-md rounded-3xl object-cover shadow-sm md:shadow-md border-secondary border-8"
               />

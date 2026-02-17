@@ -20,7 +20,6 @@ const router = createBrowserRouter([
       { path: 'szolgaltatasok', element: <ServicesPage /> },
       { path: 'gyik', element: <FAQPage /> },
       { path: 'kapcsolat', element: <ContactPage /> },
-      { path: 'elso-alkalom', element: <ContactPage /> },
     ],
   },
 ])

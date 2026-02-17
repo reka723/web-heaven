@@ -16,8 +16,7 @@ export default function AboutPage() {
       {/* Header */}
       <header className="max-w-3xl mx-auto text-center mb-16 space-y-4">
         <h1 className="text-2xl md:text-3xl font-light text-primary">
-          Egy hely, ahol a kozmetikai kezelés nem egy futószalagos szolgáltatás,
-          hanem figyelmes találkozás önmagaddal.
+          Ahol a kozmetikai kezelés figyelmes találkozás önmagaddal...
         </h1>
       </header>
 
@@ -33,7 +32,7 @@ export default function AboutPage() {
         >
           <span className="text-4xl">✨</span>
           <div className="space-y-2">
-            <h2 className="text-2xl font-semibold text-primary">BEVEZETŐ</h2>
+            <h2 className="text-2xl font-semibold text-primary">Diszkréció</h2>
             <p className="text-muted-foreground leading-relaxed">
               A Heaven – The Cosmetics-ben az első pillanattól fontos vagy. Itt
               nem siettetünk, nem ítélkezünk, nem „csak egy kezelés” történik –
@@ -57,7 +56,7 @@ export default function AboutPage() {
         >
           <span className="text-4xl">💡</span>
           <div className="space-y-2">
-            <h2 className="text-2xl font-semibold text-primary">SZEMLÉLET</h2>
+            <h2 className="text-2xl font-semibold text-primary">Szemlélet</h2>
             <p className="text-muted-foreground leading-relaxed">
               Hiszünk abban, hogy a valódi szépség a komfortérzetből indul.
               Ezért nálunk minden a biztonságról, a tiszteletről és a személyes
@@ -78,7 +77,7 @@ export default function AboutPage() {
           <span className="text-4xl">🧑‍⚕️</span>
           <div className="space-y-2">
             <h2 className="text-2xl font-semibold text-primary">
-              SZAKÉRTELEM & EMBERI JELENLÉT
+              Szakértelem & Emberi jelenlét
             </h2>
             <p className="text-muted-foreground leading-relaxed">
               A Heaven – The Cosmetics-ben dolgozó szakemberek magasan képzett,
@@ -88,31 +87,6 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
-        {/* Első alkalom */}
-        <motion.section
-          variants={fadeInRight}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="flex items-start gap-4 bg-card p-8 rounded-xl shadow-lg"
-        >
-          <span className="text-4xl">🌸</span>
-          <div className="space-y-2">
-            <h2 className="text-2xl font-semibold text-primary">
-              ELSŐ ALKALOM
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Sokan érkeznek hozzánk úgy, hogy izgulnak, bizonytalanok, vagy
-              korábbi rossz élményük volt. Ez teljesen rendben van. Az első
-              alkalom nálunk a megérkezésről, az igények átbeszéléséről és a
-              bizalom kialakításáról szól. Csak az történik, amihez te is
-              komfortosan tudsz kapcsolódni.
-            </p>
-            <Link className="underline text-primary" to="/elso-alkalom">
-              Tudj meg többet
-            </Link>
-          </div>
-        </motion.section>
         {/* Miért Heaven */}
         <motion.section
           variants={fadeInLeft}
@@ -123,13 +97,7 @@ export default function AboutPage() {
         >
           <span className="text-4xl">✨</span>
           <div className="space-y-2">
-            <h2 className="text-2xl font-semibold text-primary">MIÉRT MI?</h2>
-            <ul className="list-disc pl-6 text-muted-foreground space-y-1">
-              <li>gyengéd</li>
-              <li>professzionális</li>
-              <li>biztonságos</li>
-              <li>diszkrét</li>
-            </ul>
+            <h2 className="text-2xl font-semibold text-primary">Miért Mi?</h2>
             <p className="text-muted-foreground leading-relaxed mt-2">
               A Heaven - The Cosmetics azoknak szól, akik nem csak egy kezelést
               keresnek, hanem egy nyugodt, biztonságos teret, ahol figyelnek
@@ -137,6 +105,12 @@ export default function AboutPage() {
               személyre szabott figyelem és az, hogy jó érzéssel érkezz meg és
               távozz, jó helyen jársz.
             </p>
+            <ul className="list-disc pl-6 text-muted-foreground space-y-1">
+              <li>gyengéd</li>
+              <li>professzionális</li>
+              <li>biztonságos</li>
+              <li>diszkrét</li>
+            </ul>
           </div>
         </motion.section>
       </div>

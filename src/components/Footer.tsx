@@ -1,4 +1,4 @@
-import { FaGoogle } from 'react-icons/fa'
+import { FaFacebookF, FaGoogle, FaInstagram, FaTiktok } from 'react-icons/fa'
 
 export function Footer() {
   return (
@@ -21,7 +21,15 @@ export function Footer() {
             ÁSZF
           </a>
           <a
-            href="/Cookies.pdf"
+            href="/Adatvedelmi_tajekoztato.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground transition-colors"
+          >
+            Adatvédelmi Tájékoztató
+          </a>
+          <a
+            href="/Cookie.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"
@@ -32,23 +40,32 @@ export function Footer() {
 
         {/* Social Icons */}
         <div className="flex items-center space-x-6">
-          {/* <a
-            href="https://www.facebook.com/mycompany"
+          <a
+            href="https://www.facebook.com/profile.php?id=61584534475615"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"
             aria-label="Facebook"
           >
             <FaFacebookF className="w-5 h-5" />
-          </a> */}
+          </a>
           <a
-            href="https://share.google/SsAKQ1omvz5BBsMK3"
+            href="https://www.instagram.com/heaven_the_cosmetics"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"
             aria-label="Google"
           >
-            <FaGoogle className="w-5 h-5" />
+            <FaInstagram className="w-5 h-5" />
+          </a>
+          <a
+            href="https://www.tiktok.com/@heaventhecosmetics"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground transition-colors"
+            aria-label="Google"
+          >
+            <FaTiktok className="w-5 h-5" />
           </a>
         </div>
       </div>

@@ -40,9 +40,6 @@ export default function ContactPage() {
         <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
           Kapcsolat
         </h1>
-        <p className="text-muted-foreground text-lg">
-          Vedd fel velünk a kapcsolatot bizalommal.
-        </p>
       </header>
 
       <div className="max-w-6xl mx-auto space-y-12">
@@ -59,13 +56,11 @@ export default function ContactPage() {
           className="grid md:grid-cols-2 bg-card rounded-xl shadow overflow-hidden"
         >
           {/* LEFT SIDE — IMAGE */}
-          <div className="h-64 md:h-auto">
-            <img
-              src="/plant2.jpg" // <-- cseréld saját képre
-              alt="Heaven – The Cosmetics"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <img
+            src="/spaPlant.jpg"
+            alt="Heaven – The Cosmetics"
+            className="object-fill block w-full h-full"
+          />
 
           {/* RIGHT SIDE */}
           <div className="p-8 md:p-10 space-y-8 flex flex-col justify-evenly">

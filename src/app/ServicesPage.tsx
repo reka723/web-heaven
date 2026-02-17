@@ -28,7 +28,83 @@ export const ServicesPage = () => {
       </header>
 
       {/* MAIN SERVICES */}
-      <div className="max-w-5xl mx-auto space-y-12 py-12">
+      <div className="max-w-5xl mx-auto space-y-8 flex flex-col items-center">
+        {/* WAX */}
+        <div className="max-w-5xl mx-auto ">
+          <motion.div
+            key={selectedGender}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+            className="grid md:grid-cols-2 gap-8 bg-card rounded-xl p-6 shadow cursor-pointer"
+          >
+            {/* LEFT SIDE  */}
+            <div className="self-center space-y-4">
+              <h3 className="text-2xl font-semibold text-primary mb-2">
+                ✨ WAX-kezelések
+              </h3>
+
+              <p className="text-muted-foreground">
+                Professzionális gyantázási kezelések higiénikus, nyugodt
+                környezetben.
+              </p>
+
+              {/* Gender Toggle */}
+              <div className="flex gap-4">
+                <Button
+                  size="sm"
+                  variant={selectedGender === 'female' ? 'default' : 'outline'}
+                  onClick={() => setSelectedGender('female')}
+                >
+                  Női
+                </Button>
+
+                <Button
+                  size="sm"
+                  variant={selectedGender === 'male' ? 'default' : 'outline'}
+                  onClick={() => setSelectedGender('male')}
+                >
+                  Férfi
+                </Button>
+              </div>
+            </div>
+
+            {/* RIGHT SIDE */}
+            <div className="max-h-96 overflow-y-scroll  rounded-md ">
+              {/* Header Row */}
+              <ul className="flex justify-between font-semibold px-4 py-2 bg-muted sticky top-0 z-10">
+                <li className="flex justify-between w-full">
+                  <span className="w-2/6">Megnevezés</span>
+                  <span className="w-1/6 text-center">Idő</span>
+                  <span className="w-2/6 text-center">Első alkalommal</span>
+                  <span className="w-1/6 text-right">Ár</span>
+                </li>
+              </ul>
+
+              {/* Data Rows */}
+              <ul className="divide-y divide-muted-foreground px-4">
+                {filteredWaxServices.map((service, i) => (
+                  <li
+                    key={i}
+                    className="flex justify-between py-2 hover:bg-gray-50 transition-colors"
+                  >
+                    <span className="w-2/6">{service.name}</span>
+                    <span className="w-1/6 text-center">
+                      {service.duration.regular}p
+                    </span>
+                    <span className="w-2/6 text-center">
+                      {service.duration.new}p
+                    </span>
+                    <span className="w-1/6 text-right">{service.price}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* WELLNESS */}
         {servicesData.map((service, index) => (
           <motion.div
             key={service.id}
@@ -36,15 +112,12 @@ export const ServicesPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{
-              scale: 1.02,
-              boxShadow: '0 12px 24px rgba(0,0,0,0.12)',
-            }}
             className="grid md:grid-cols-2 gap-8 bg-card rounded-xl p-6 shadow cursor-pointer"
           >
+            {/* LEFT SIDE  */}
             <div className="self-center">
               <h3 className="text-2xl font-semibold text-primary mb-2">
-                {service.title}
+                🌿 {service.title}
               </h3>
               <p className="text-muted-foreground">{service.description}</p>
               {service.note && (
@@ -54,89 +127,35 @@ export const ServicesPage = () => {
               )}
             </div>
 
-            <div>
-              <ul className="divide-y divide-muted-foreground text-muted-foreground">
-                {service.details.map((d, i) => (
+            <div className="max-h-96 overflow-y-scroll  rounded-md">
+              {/* Header Row */}
+              <ul className="flex justify-between font-semibold px-4 py-2 bg-muted sticky top-0 z-10">
+                <li className="flex justify-between w-full">
+                  <span className="sm:w-4/6 w-3/6">Megnevezés</span>
+                  <span className="w-1/6 text-center">Idő</span>
+                  <span className="w-1/6 text-right">Ár</span>
+                </li>
+              </ul>
+
+              {/* Data Rows */}
+              <ul className="divide-y divide-muted-foreground px-4">
+                {service.details.map((service, i) => (
                   <li
                     key={i}
-                    className="flex-col lg:flex-row flex justify-between py-2"
+                    className="flex justify-between py-2 hover:bg-gray-50 transition-colors"
                   >
-                    <span>{d.name}</span>
-                    <span>{d.duration}</span>
+                    <span className="sm:w-4/6 w-3/6">{service.name}</span>
+                    <span className="w-1/6 text-center">
+                      {service.duration}p
+                    </span>
+
+                    <span className="w-1/6 text-right">{service.price}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </motion.div>
         ))}
-      </div>
-
-      {/* ============================= */}
-      {/* WAX SERVICES SECTION */}
-      {/* ============================= */}
-
-      <div className="max-w-5xl mx-auto space-y-12 py-12">
-        <motion.div
-          key={selectedGender}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5 }}
-          whileHover={{
-            scale: 1.02,
-            boxShadow: '0 12px 24px rgba(0,0,0,0.12)',
-          }}
-          className="grid md:grid-cols-2 gap-8 bg-card rounded-xl p-6 shadow cursor-pointer"
-        >
-          {/* LEFT SIDE — same structure as other services */}
-          <div className="self-center space-y-4">
-            <h3 className="text-2xl font-semibold text-primary mb-2">
-              WAX-kezelések
-            </h3>
-
-            <p className="text-muted-foreground">
-              Professzionális gyantázási kezelések higiénikus, nyugodt
-              környezetben.
-            </p>
-
-            {/* Gender Toggle */}
-            <div className="flex gap-4 pt-4">
-              <Button
-                size="sm"
-                variant={selectedGender === 'female' ? 'default' : 'outline'}
-                onClick={() => setSelectedGender('female')}
-              >
-                Női
-              </Button>
-
-              <Button
-                size="sm"
-                variant={selectedGender === 'male' ? 'default' : 'outline'}
-                onClick={() => setSelectedGender('male')}
-              >
-                Férfi
-              </Button>
-            </div>
-          </div>
-
-          {/* RIGHT SIDE — identical details layout */}
-          <div>
-            <ul className="divide-y divide-muted-foreground text-muted-foreground">
-              {filteredWaxServices.map((service, i) => (
-                <li
-                  key={i}
-                  className="flex-col lg:flex-row flex justify-between py-2"
-                >
-                  <span>{service.name}</span>
-                  <div className="flex gap-6 text-sm">
-                    <span>{service.duration}</span>
-                    {/* {service.price && <span>{service.price}</span>} */}
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </motion.div>
       </div>
     </main>
   )

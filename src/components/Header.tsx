@@ -20,7 +20,6 @@ export function Header() {
     { name: 'Rólunk', to: '/rolunk' },
     { name: 'GYIK', to: '/gyik' },
     { name: 'Kapcsolat', to: '/kapcsolat' },
-    { name: 'Első alkalom', to: '/elso-alkalom' },
   ]
 
   return (
