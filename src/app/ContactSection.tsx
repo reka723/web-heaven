@@ -7,45 +7,13 @@ import { Mail, MapPin, MessageSquare, Phone, User } from 'lucide-react'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
-    console.log(setIsSubmitting, setStatus)
   }
-
-  // const encode = (data: Record<string, string>) => {
-  //   return Object.keys(data)
-  //     .map(
-  //       (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
-  //     )
-  //     .join('&')
-  // }
-
-  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault()
-  //   setIsSubmitting(true)
-  //   setStatus('idle')
-
-  //   try {
-  //     await fetch('/', {
-  //       method: 'POST',
-  //       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  //       body: new URLSearchParams(formData).toString(),
-  //     })
-
-  //     setStatus('success')
-  //     setFormData({ name: '', email: '', message: '' })
-  //   } catch {
-  //     setStatus('error')
-  //   } finally {
-  //     setIsSubmitting(false)
-  //   }
-  // }
 
   return (
     <main className="min-h-screen bg-background px-4 py-20">
@@ -129,7 +97,6 @@ export default function ContactPage() {
                 name="contact"
                 method="POST"
                 data-netlify="true"
-                // onSubmit={handleSubmit}
                 className="space-y-5"
               >
                 <input type="hidden" name="form-name" value="contact" />
@@ -172,13 +139,7 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full"
-                >
-                  {isSubmitting ? 'Küldés...' : 'Üzenet küldése'}
-                </Button>
+                <Button type="submit" className="w-full"></Button>
 
                 {status === 'success' && (
                   <p className="text-sm text-green-600">Köszönjük üzeneted!</p>
