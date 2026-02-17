@@ -33,16 +33,16 @@ export const servicesData = [
     details: [
       {
         name: '„Kék kezelés” – bőrkép helyreállító',
-        duration: 120,
+        duration: 60,
         price: '10.600 Ft',
       },
       {
-        name: 'Kímélő arctisztító kezelés I. típusú',
+        name: 'Xebor arctisztító kezelés I. típusú',
         duration: 120,
         price: '16.700 Ft',
       },
       {
-        name: 'Kímélő arctisztító kezelés II. típusú',
+        name: 'Xebor arctisztító kezelés II. típusú',
         duration: 120,
         price: '18.500 Ft',
       },
@@ -160,12 +160,6 @@ export const waxServices = {
     },
     {
       gender: 'female',
-      name: 'Derék',
-      price: '2.800 Ft',
-      duration: { regular: 30, new: 30 },
-    },
-    {
-      gender: 'female',
       name: 'Hónalj',
       price: '2.500 Ft',
       duration: { regular: 15, new: 30 },
@@ -258,19 +252,19 @@ export const waxServices = {
     },
     {
       gender: 'male',
-      name: 'Fecskén túl',
+      name: 'Fecske wax',
       price: '18.900 Ft',
       duration: { regular: 60, new: 75 },
     },
     {
       gender: 'male',
-      name: 'Teljes Intim',
+      name: 'Brazil wax',
       price: '17.900 Ft',
       duration: { regular: 60, new: 60 },
     },
     {
       gender: 'male',
-      name: 'Részleges Intim',
+      name: 'Részleges Brazil wax',
       price: '16.200 Ft',
       duration: { regular: 45, new: 45 },
     },
@@ -426,7 +420,7 @@ export const generalFAQ = [
   {
     question: 'Mennyivel érkezzek a kezelés előtt?',
     answer:
-      'Érdemes 5–10 cel korábban érkezni, hogy kényelmesen fel tudj készülni.',
+      'Érdemes 5–10 perccel korábban érkezni, hogy kényelmesen fel tudj készülni.',
     icon: '⏱️',
   },
   {
@@ -442,14 +436,13 @@ export const generalFAQ = [
   },
   {
     question: 'Férfi vendégeket is fogadtok?',
-    answer:
-      'Igen, bizonyos szolgáltatásaink férfi vendégek számára is elérhetők.',
+    answer: 'Igen, szolgáltatásaink férfi vendégeink számára is elérhetők.',
     icon: '🧑',
   },
   {
     question: 'Terhesség alatt igénybe vehetők a kezelések?',
     answer:
-      'Egyes kezelések igen, mások nem. Ilyen esetben javasolt előzetesen egyeztetni.',
+      'A kezeléseink nagy része igen, de mindenképp egyeztess kozmetikusainkkal mielőtt érkezel.',
     icon: '🤰',
   },
 ]
@@ -470,19 +463,19 @@ export const waxFAQ = [
   {
     question: 'Milyen hosszú szőr szükséges a waxhoz?',
     answer:
-      'A waxolás akkor tud igazán szép és alapos eredményt adni, ha a szőrszálak már megfelelő hosszúságúak. Ideális esetben ez körülbelül 0,5–1 cm.',
+      'A wax akkor tud igazán szép és alapos eredményt adni, ha a szőrszálak már megfelelő hosszúságúak. Ideális esetben ez körülbelül 0,5–1 cm.',
     icon: '✂️',
   },
   {
     question: 'Első alkalommal is lehet intim waxot kérni?',
     answer:
-      'Igen, természetesen. Sok vendégünk első alkalommal is az intim waxot választja. A kezelést diszkréten, ítélkezés nélkül végezzük.',
+      'Igen, természetesen. Sok vendégünk első alkalommal is az intim waxot választja. A kezelést diszkréten, maximális tisztelettel végezzük.',
     icon: '🌸',
   },
   {
-    question: 'Menstruáció idején ajánlott a wax?',
+    question: 'Jöhetek menstruáció ideje alatt is waxra?',
     answer:
-      'Az intim wax menstruáció ideje alatt is elvégezhető, amennyiben a vendég a kezelés során komfortosan érzi magát, és megfelelő higiéniai eszközt (tampon vagy menstruációs kehely) használ.',
+      'Az intim wax menstruáció ideje alatt is elvégezhető, amennyiben a vendég a kezelés során komfortosan érzi magát, és megfelelő higiéniai eszközt (tampont vagy menstruációs kelyhet) használ.',
     icon: '🩸',
   },
 ]

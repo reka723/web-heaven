@@ -13,10 +13,15 @@ export default function AboutPage() {
   return (
     <main className="bg-background text-foreground min-h-screen px-4 md:px-20 py-20">
       {/* Header */}
-      <header className="max-w-3xl mx-auto text-center mb-16 space-y-4">
+      <header className="max-w-3xl mx-auto flex flex-col items-center mb-16 space-y-4">
         <h1 className="text-2xl md:text-3xl font-light text-primary">
           Ahol a kozmetikai kezelés figyelmes találkozás önmagaddal...
         </h1>
+        <img
+          src="/iconLandscape.png"
+          alt="Heaven – The Cosmetics"
+          className="object-cover block w-full"
+        />
       </header>
 
       {/* Sections */}
@@ -29,18 +34,17 @@ export default function AboutPage() {
           viewport={{ once: true, amount: 0.3 }}
           className="flex items-start gap-4 bg-card p-8 rounded-xl shadow-lg"
         >
-          <span className="text-4xl">✨</span>
+          <span className="text-4xl">🌿</span>
           <div className="space-y-2">
             <h2 className="text-2xl font-semibold text-primary">Diszkréció</h2>
             <p className="text-muted-foreground leading-relaxed">
               A Heaven – The Cosmetics-ben az első pillanattól fontos vagy. Itt
-              nem siettetünk, nem ítélkezünk, nem „csak egy kezelés” történik –
+              nem siettetünk, nem ítélkezünk, nem csak egy kezelés történik –
               hanem figyelmes, biztonságos gondoskodás. A Heaven egy olyan
               kozmetikai tér, ahol a precizitás, a diszkréció és a nyugalom
               természetes alapérték. Legyen szó első alkalomról vagy rendszeres
               kezelésekről, nálunk minden lépés a te komfortodhoz igazodik.
               <br />
-              <strong>Időpontot foglalok: +36 20 347 7262</strong>
             </p>
           </div>
         </motion.section>
@@ -73,10 +77,10 @@ export default function AboutPage() {
           viewport={{ once: true, amount: 0.3 }}
           className="flex items-start gap-4 bg-card p-8 rounded-xl shadow-lg"
         >
-          <span className="text-4xl">🧑‍⚕️</span>
+          <span className="text-4xl">🧑</span>
           <div className="space-y-2">
             <h2 className="text-2xl font-semibold text-primary">
-              Szakértelem & Emberi jelenlét
+              Szakértelem & emberi jelenlét
             </h2>
             <p className="text-muted-foreground leading-relaxed">
               A Heaven – The Cosmetics-ben dolgozó szakemberek magasan képzett,
@@ -96,7 +100,7 @@ export default function AboutPage() {
         >
           <span className="text-4xl">✨</span>
           <div className="space-y-2">
-            <h2 className="text-2xl font-semibold text-primary">Miért Mi?</h2>
+            <h2 className="text-2xl font-semibold text-primary">Miért mi?</h2>
             <p className="text-muted-foreground leading-relaxed mt-2">
               A Heaven - The Cosmetics azoknak szól, akik nem csak egy kezelést
               keresnek, hanem egy nyugodt, biztonságos teret, ahol figyelnek

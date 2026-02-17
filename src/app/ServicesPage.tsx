@@ -29,81 +29,6 @@ export const ServicesPage = () => {
 
       {/* MAIN SERVICES */}
       <div className="max-w-5xl mx-auto space-y-8 flex flex-col items-center">
-        {/* WAX */}
-        <div className="max-w-5xl mx-auto ">
-          <motion.div
-            key={selectedGender}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5 }}
-            className="grid md:grid-cols-2 gap-8 bg-card rounded-xl p-6 shadow cursor-pointer"
-          >
-            {/* LEFT SIDE  */}
-            <div className="self-center space-y-4">
-              <h3 className="text-2xl font-semibold text-primary mb-2">
-                ✨ WAX-kezelések
-              </h3>
-
-              <p className="text-muted-foreground">
-                Professzionális gyantázási kezelések higiénikus, nyugodt
-                környezetben.
-              </p>
-
-              {/* Gender Toggle */}
-              <div className="flex gap-4">
-                <Button
-                  size="sm"
-                  variant={selectedGender === 'female' ? 'default' : 'outline'}
-                  onClick={() => setSelectedGender('female')}
-                >
-                  Női
-                </Button>
-
-                <Button
-                  size="sm"
-                  variant={selectedGender === 'male' ? 'default' : 'outline'}
-                  onClick={() => setSelectedGender('male')}
-                >
-                  Férfi
-                </Button>
-              </div>
-            </div>
-
-            {/* RIGHT SIDE */}
-            <div className="max-h-96 overflow-y-scroll  rounded-md ">
-              {/* Header Row */}
-              <ul className="flex justify-between font-semibold px-4 py-2 bg-muted sticky top-0 z-10">
-                <li className="flex justify-between w-full">
-                  <span className="sm:w-2/6 w-3/6">Megnevezés</span>
-                  <span className="w-1/6 text-center">Idő</span>
-                  <span className="w-2/6 text-center">Első alkalom</span>
-                  <span className="w-1/6 text-right">Ár</span>
-                </li>
-              </ul>
-
-              {/* Data Rows */}
-              <ul className="divide-y divide-muted-foreground px-4">
-                {filteredWaxServices.map((service, i) => (
-                  <li
-                    key={i}
-                    className="flex justify-between py-2 hover:bg-gray-50 transition-colors"
-                  >
-                    <span className="w-2/6">{service.name}</span>
-                    <span className="w-1/6 text-center">
-                      {service.duration.regular}p
-                    </span>
-                    <span className="w-2/6 text-center">
-                      {service.duration.new}p
-                    </span>
-                    <span className="w-1/6 text-right">{service.price}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
-        </div>
-
         {/* WELLNESS */}
         {servicesData.map((service, index) => (
           <motion.div
@@ -129,33 +54,95 @@ export const ServicesPage = () => {
 
             <div className="max-h-96 overflow-y-scroll  rounded-md">
               {/* Header Row */}
-              <ul className="flex justify-between font-semibold px-4 py-2 bg-muted sticky top-0 z-10">
-                <li className="flex justify-between w-full">
-                  <span className="sm:w-4/6 w-3/6">Megnevezés</span>
-                  <span className="w-1/6 text-center">Idő</span>
-                  <span className="w-1/6 text-right">Ár</span>
-                </li>
+              <ul className="grid grid-cols-[4fr_1fr_1fr] font-semibold px-4 py-2 bg-muted sticky top-0 z-10">
+                <span>Megnevezés</span>
+                <span className="text-center">Idő</span>
+                <span className="text-right">Ár</span>
               </ul>
 
               {/* Data Rows */}
               <ul className="divide-y divide-muted-foreground px-4">
-                {service.details.map((service, i) => (
+                {service.details.map((item, i) => (
                   <li
                     key={i}
-                    className="flex justify-between py-2 hover:bg-gray-50 transition-colors"
+                    className="grid grid-cols-[4fr_1fr_1fr] py-2 hover:bg-gray-50 transition-colors"
                   >
-                    <span className="sm:w-4/6 w-3/6">{service.name}</span>
-                    <span className="w-1/6 text-center">
-                      {service.duration}p
-                    </span>
-
-                    <span className="w-1/6 text-right">{service.price}</span>
+                    <span>{item.name}</span>
+                    <span className="text-center">{item.duration}p</span>
+                    <span className="text-right">{item.price}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </motion.div>
         ))}
+        {/* WAX */}
+        <motion.div
+          key={selectedGender}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+          className="grid md:grid-cols-2 gap-8 bg-card rounded-xl p-6 shadow cursor-pointer"
+        >
+          {/* LEFT SIDE  */}
+          <div className="self-center space-y-4">
+            <h3 className="text-2xl font-semibold text-primary mb-2">
+              ✨ WAX-kezelések
+            </h3>
+
+            <p className="text-muted-foreground">
+              Professzionális wax kezelések higiénikus, nyugodt környezetben.
+            </p>
+
+            {/* Gender Toggle */}
+            <div className="flex gap-4">
+              <Button
+                size="sm"
+                variant={selectedGender === 'female' ? 'default' : 'outline'}
+                onClick={() => setSelectedGender('female')}
+              >
+                Női
+              </Button>
+
+              <Button
+                size="sm"
+                variant={selectedGender === 'male' ? 'default' : 'outline'}
+                onClick={() => setSelectedGender('male')}
+              >
+                Férfi
+              </Button>
+            </div>
+          </div>
+
+          {/* RIGHT SIDE */}
+          <div className="max-h-96 overflow-y-scroll  rounded-md ">
+            {/* Header Row */}
+            <ul className="grid grid-cols-[3fr_1fr_2fr_1fr] font-semibold px-4 py-2 bg-muted sticky top-0 z-10">
+              <span>Megnevezés</span>
+              <span className="text-center">Idő</span>
+              <span className="text-center">Első alkalom</span>
+              <span className="text-right">Ár</span>
+            </ul>
+
+            {/* Data Rows */}
+            <ul className="divide-y divide-muted-foreground px-4">
+              {filteredWaxServices.map((service, i) => (
+                <li
+                  key={i}
+                  className="grid grid-cols-[3fr_1fr_2fr_1fr] py-2 hover:bg-gray-50 transition-colors"
+                >
+                  <span>{service.name}</span>
+                  <span className="text-center">
+                    {service.duration.regular}p
+                  </span>
+                  <span className="text-center">{service.duration.new}p</span>
+                  <span className="text-right">{service.price}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.div>
       </div>
     </main>
   )

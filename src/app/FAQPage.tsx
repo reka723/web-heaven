@@ -51,7 +51,7 @@ export default function FAQPage() {
           GYIK – Heaven – The Cosmetics
         </h1>
         <p className="text-muted-foreground">
-          Minden kérdésre válaszunk, hogy nyugodtan érkezhess a kezelésekre.
+          Minden kérdésre válaszolunk, hogy nyugodtan érkezhess a kezelésekre.
         </p>
       </header>
 
