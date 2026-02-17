@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router'
 
 export default function AboutPage() {
   const fadeInLeft = {
